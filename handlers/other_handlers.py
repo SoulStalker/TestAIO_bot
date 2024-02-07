@@ -1,6 +1,6 @@
 from aiogram import Router
 from aiogram.types import Message
-from lexicon.lexicon import LexiconRu
+from lexicon.lexicon import LEXICON_RU
 
 # initializing module level router
 router = Router()
@@ -12,4 +12,4 @@ async def other_handler(message: Message):
     try:
         await message.send_copy(chat_id=message.chat.id)
     except TypeError:
-        await message.reply(text=LexiconRu.no_echo)
+        await message.reply(text=LEXICON_RU['no_echo'])
